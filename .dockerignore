@@ -1,9 +1,0 @@
-target
-**/target
-*.log
-*.tmp
-*.swp
-.idea
-.vscode
-*.class
-**/.DS_Store
