@@ -20,6 +20,11 @@ public class GreetingController {
         return Mono.just("Hola mundo reactivo!");
     }
 
+    @GetMapping("/status")
+    public Mono<String> status() {
+        return Mono.just("API Reactiva desplegada - READY");
+    }
+
     @GetMapping(value = "/numbers", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<Integer> numbers() {
         return Flux.range(1, 10)

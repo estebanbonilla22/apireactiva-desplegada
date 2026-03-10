@@ -1,0 +1,70 @@
+{
+  "info": {
+    "name": "API Reactiva - Postman",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Colección de pruebas para la API reactiva con WebFlux"
+  },
+  "item": [
+    {
+      "name": "GET /api/hello",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:8081/api/hello",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "hello"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/numbers",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/event-stream"
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "http://localhost:8081/api/numbers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "numbers"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /api/echo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "hola"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/echo",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "echo"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
