@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  api-reactiva:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: api-reactiva:latest
+    ports:
+      - "8081:8080"
+    restart: unless-stopped
