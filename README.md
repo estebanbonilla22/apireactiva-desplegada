@@ -19,8 +19,27 @@ Abrir:
 - `http://localhost:8081`
 - `http://localhost:8081/api/status`
 
-## Vercel
+## Fly.io (recomendado para Docker)
 
-1. Repositorio en GitHub conectado a Vercel.
-2. `vercel.json` ya configurado con `@vercel/docker`.
-3. Desplegar y verificar `/` y `/api/status`.
+1. Instala flyctl: `curl -L https://fly.io/install.sh | sh` (Windows: https://fly.io/docs/getting-started/installing-flyctl/).
+2. Login:
+
+```bash
+flyctl auth login
+```
+
+3. Despliega:
+
+```bash
+flyctl launch --name apireactiva-desplegada --region iad --dockerfile Dockerfile --no-deploy
+flyctl deploy
+```
+
+4. Verifica:
+
+- `https://apireactiva-desplegada.fly.dev/`
+- `https://apireactiva-desplegada.fly.dev/api/status`
+
+## Vercel (no compatible con @vercel/docker)
+
+Vercel no permite ahora la builder `@vercel/docker` para todos los planes. Si tu objetivo es desplegar en Vercel, podrías usar la app de backend en Fly/Railway/Render y tener en Vercel solo frontend. “fly” es la vía rápida y estable para Docker.
